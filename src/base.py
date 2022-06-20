@@ -235,10 +235,9 @@ def peb(df, ticker, column_name, nppy, ave_return, error_):
     plt.show()
     
     
-def ticket_read(start_date, end_date, ticker):
+def ticket_read(start_date, end_date, ticker, rd_type = 'yahoo' ):
     # GET PRICE DATA
     asset_value_type = 'return'
-    rd_type = 'yahoo'
     EFT_df = DataReader(ticker, rd_type, start = start_date, end = end_date)
     EFT_df.index = to_datetime(EFT_df.index, format ='%Y-%m-%d')
     # determine nummber of peruods per year from 
